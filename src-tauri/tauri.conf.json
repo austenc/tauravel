@@ -53,10 +53,11 @@
     },
     "security": {
       "csp": null,
-      "dangerousExternalCommandAccess": [
+      "dangerousRemoteDomainIpcAccess": [
         {
-          "url": "http://localhost:5150",
-          "windows": ["main"]
+          "domain": "localhost",
+          "windows": ["main"],
+          "enableTauriAPI": true
         }
       ]
     },

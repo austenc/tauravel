@@ -9,10 +9,15 @@ fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
+#[tauri::command]
+fn tester(name: &str) -> String {
+    format!("Hello, {}! You've been greeted from Rust!", name)
+}
+
 use std::{env::set_current_dir, process::Command};
 
 fn main() {
-    set_current_dir("/Users/austen/Code/arsenal").expect("Unable to find path.");
+    set_current_dir("/Users/austen/Code/laravel-tauri").expect("Unable to find path.");
     let server = Command::new("php")
         .args(["-S", "localhost:5150", "-t", "public"])
         .spawn()
